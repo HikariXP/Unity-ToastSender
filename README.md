@@ -10,3 +10,5 @@ Modify the ps1 to Adapt to your needs.
 # How to use
 Currently the ps1 script takes two arguments, but the implementation uses only one, so you'll need to change that yourself.
 For Unity, you can follow the Sample implementation by opening PS1 as PowerShell and passing the parameters.
+
+you can only download the ps1 file and use.
