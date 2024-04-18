@@ -2,19 +2,19 @@ Param(
     [string]$title,
     [string]$content
 )
-# Param¹Ø¼ü×ÖĞèÒªÖÃ¶¥
+# Paramå…³é”®å­—éœ€è¦ç½®é¡¶
 
 
-#Ìí¼Ó¶ÔXML¿âµÄÒıÓÃ
+#æ·»åŠ å¯¹XMLåº“çš„å¼•ç”¨
 Add-Type -Path "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETCore\v4.5\System.Runtime.WindowsRuntime.dll"
 
-#PowerShell ÖĞÒıÈë Windows Runtime£¨WinRT£©µÄÀà
+#PowerShell ä¸­å¼•å…¥ Windows Runtimeï¼ˆWinRTï¼‰çš„ç±»
 [Windows.UI.Notifications.ToastNotificationManager, Windows.UI.Notifications, ContentType = WindowsRuntime]
 [Windows.Data.Xml.Dom.XmlDocument, Windows.Data.Xml.Dom.XmlDocument, ContentType = WindowsRuntime]
 
 
 
-#´´½¨XMLÎÄ¼ş
+#åˆ›å»ºXMLæ–‡ä»¶
 $template = @"
 <toast>
     <visual>
@@ -25,15 +25,16 @@ $template = @"
 </toast>
 "@
 
-# ´´½¨Ò»¸öToastÍ¨Öª
+# åˆ›å»ºä¸€ä¸ªToasté€šçŸ¥
 $toastXml = New-Object -TypeName Windows.Data.Xml.Dom.XmlDocument
 $toastXml.LoadXml($template)
 $toast = New-Object -TypeName Windows.UI.Notifications.ToastNotification -ArgumentList $toastXml
 
-# »ñÈ¡Ó¦ÓÃµÄToastÍ¨Öª¹ÜÀíÆ÷
-$appId = "{6D809377-6AF0-444B-8957-A3773F02200E}\Unity\Hub\Editor\2019.4.32f1\Editor\Unity.exe" # Ìæ»»ÎªÄãµÄAPPID
+# è·å–åº”ç”¨çš„Toasté€šçŸ¥ç®¡ç†å™¨
+# Run "Get-StartApps" in PowerShell To Get the App-Id to your unity or something
+$appId = "{6D809377-6AF0-444B-8957-A3773F02200E}\Unity\Hub\Editor\2019.4.32f1\Editor\Unity.exe" # æ›¿æ¢ä¸ºä½ çš„APPID
 $toastNotifier = [Windows.UI.Notifications.ToastNotificationManager]::CreateToastNotifier($appId)
 
-# ÏÔÊ¾ToastÍ¨Öª
+# æ˜¾ç¤ºToasté€šçŸ¥
 $toastNotifier.Show($toast)
 pause
