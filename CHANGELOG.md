@@ -1,6 +1,7 @@
 # 0.0.2
-- HDR modify
-- Add a sample "InAppPurchase InvokeChain"
+- Support "Install from UPM"
+- Include required dll.
+- Modify Toast template from "ToastText01" to "ToastGeneric"
 
 # 0.0.1
 - First Commit
