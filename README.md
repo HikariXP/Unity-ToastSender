@@ -2,7 +2,7 @@
 
 Simple Plugin For Unity Send Window Toast Notification with Non-UWP Build Target.
 
-![Demo](./Unity-ToastSender_resources/image-20240417102105225.png)
+![Demo](./ReadmeResources~/image-20240417102105225.png)
 
 
 Modify the ps1 to Adapt to your needs.

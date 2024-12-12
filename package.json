@@ -1,0 +1,22 @@
+{
+  "name": "com.charsui.toast",
+  "version": "0.0.2",
+  "displayName": "CharSui Toast",
+  "description": "A plugins for call window Toast Notification in unity without select BuildTarget pf UWP(Universal Windows Platform)",
+  "keywords": [
+    "charsui",
+    "toast"
+  ],
+  "author": {
+    "name": "CharSui",
+    "email": "charcharsui@gmail.com",
+    "url": "https://github.com/HikariXP"
+  },
+  "samples": [
+    {
+      "displayName": "IAP InvokeChain",
+      "description": "Contains sample InvokeChain for get price from server and change it in clientLogic",
+      "path": "Samples~/IAPSample"
+    }
+  ]
+}
