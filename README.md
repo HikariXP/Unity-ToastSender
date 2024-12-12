@@ -1,20 +1,20 @@
 # Unity-ToastSender
 
-Simple Plugin For Unity Send Window Toast Notification with Non-UWP Build Target.
+正常途径下，Unity需要将BuildTarget设置为UWP才可以使用Toast相关的API，此工具通过PS1脚本代你将信息传递给Toast进行发送。
 
 ![Demo](./ReadmeResources~/image-20240417102105225.png)
 
-
-Modify the ps1 to Adapt to your needs.
+我已经将用到的DLL置于Plugins中。PS1代码的作用是帮你加载DLL以及执行其中的内容， 那这是否可以直接通过C#调用呢？如果可以的话代码可以写得更加优雅。
 
 # You need to know
-* First, Toast is a notification tool for Windows, and it only works on Windows.  
-* Second, if you want to do something at runtime, build it to test it.(I didn't test it)
+
+* Toast是Windows的工具，其他平台上不可用，或许是其他形式。  
+* 没测试过是否可以在Runtime中使用，如果你要使用需要自己先测试
 
 # How to use
-Not need to put ps1 to Plugins Folder, just find anywhere in your project, and set the path.
+通过Unity Package加载:`https://github.com/HikariXP/Unity-ToastSender.git`
 
-Currently the ps1 script takes two arguments, but the implementation uses only one, so you'll need to change that yourself.
-For Unity, you can follow the Sample implementation by opening PS1 as PowerShell and passing the parameters.
+调用CharSuiToast.SendToast来发通知
 
-you can only download the ps1 file and use.
+
+

@@ -17,8 +17,9 @@ echo $dllPath
 $template = @"
 <toast>
     <visual>
-        <binding template="ToastText01">
-            <text id="1">$content</text>
+        <binding template="ToastGeneric">
+            <text id = "1">$title</text>
+	<text id = "2">$content</text>
         </binding>
     </visual>
 </toast>

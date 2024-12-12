@@ -12,11 +12,9 @@ using UnityEditor;
 
 public class CharSuiToast
 {
-	// todo:初始化->确认DLL存在以及位置
-	
-	private static string pluginPath = "Packages/com.charsui.toast/Plugins/ToastSenderTool.ps1";
-	
-	private static string pluginFullPath = Path.GetFullPath(pluginPath);
+	private static string pluginPath => "Packages/com.charsui.toast/Plugins/ToastSenderTool.ps1";
+
+	private static string pluginFullPath => Path.GetFullPath(pluginPath);
 
 	private static string dllPath
 	{
@@ -30,12 +28,12 @@ public class CharSuiToast
 		}
 	}
 	
-	private static string dllFullPath = Path.GetFullPath(dllPath);
+	private static string dllFullPath => Path.GetFullPath(dllPath);
 
 	[MenuItem("CharSuiToast/Check")]
 	public static void SendTest()
 	{
-		SendToast("Unity", "123");
+		SendToast("Check Success", "A toast is send");
 	}
 
 	public static void SendToast(string title, string content)
@@ -43,12 +41,12 @@ public class CharSuiToast
 		PowerShell_RunScript(pluginFullPath, dllFullPath, title, content);
 	}
 
-	private static void PowerShell_RunScript(string scriptPath, string dllPath, string title, string content)
+	private static void PowerShell_RunScript(string scriptPath, string runtimeWindowsDllPath, string title, string content)
 	{
 		var startInfo = new ProcessStartInfo()
 		{
 			FileName = "powershell.exe",
-			Arguments = $"-ExecutionPolicy Bypass -File \"{scriptPath}\" -dllPath \"{dllPath}\" -title \"{title}\" -content \"{content}\"",
+			Arguments = $"-ExecutionPolicy Bypass -File \"{scriptPath}\" -dllPath \"{runtimeWindowsDllPath}\" -title \"{title}\" -content \"{content}\"",
 			UseShellExecute = false,
 			RedirectStandardOutput = true,
 			RedirectStandardError = true, 
