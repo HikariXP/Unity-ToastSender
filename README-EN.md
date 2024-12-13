@@ -1,4 +1,6 @@
 # Unity-ToastSender
+[Chinese](README.md)
+[English](README-EN.md)
 
 Normally, Unity needs to set BuildTarget to UWP to use the Toast API. This tool uses PS1 script to pass information to Toast for you to send.
 
