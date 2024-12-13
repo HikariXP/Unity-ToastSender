@@ -1,4 +1,6 @@
 # Unity-ToastSender
+[Chinese](README.md)
+[English](README-EN.md)
 
 正常途径下，Unity需要将BuildTarget设置为UWP才可以使用Toast相关的API，此工具通过PS1脚本代你将信息传递给Toast进行发送。
 
